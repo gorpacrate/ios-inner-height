@@ -22,7 +22,10 @@ module.exports = (function () {
 		 * @return {number} - window's innerHeight measurement in pixels
 		 */
 		return function () {
-			return window.innerHeight;
+      return {
+        height: window.innerHeight,
+        width: window.innerWidth
+      };
 		};
 	}
 
@@ -64,9 +67,15 @@ module.exports = (function () {
 	 */
 	return function () {
 		if (Math.abs(window.orientation) !== 90) {
-			return dims.h;
+      return {
+        height: dims.h,
+        width: dims.w
+      };
 		}
-		return dims.w;
+    return {
+      height: dims.w,
+      width: dims.h
+    };
 	};
 })();
 

@@ -18,7 +18,7 @@ test('should return a function if iOS', assert => {
 });
 
 test('should return proper height', assert => {
-	assert.equal(vph(), window.innerHeight);
+	assert.equal(vph().height, window.innerHeight);
 	assert.end();
 });
 
@@ -29,7 +29,7 @@ test('should update orientation on orientation change', assert => {
 });
 
 test('should reverse dimensions on orientation change', assert => {
-	assert.equal(vph(), window.innerWidth);
+	assert.equal(vph().height, window.innerWidth);
 	assert.end();
 });
 
